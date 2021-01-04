@@ -36,14 +36,14 @@
     "**/@typescript-eslint/parser": "^4.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --verbose=false",
     "test:ci": "cross-env CI=true react-scripts test --ci --reporters=default --detectOpenHandles --coverage --runInBand --forceExit",
     "eject": "react-scripts eject",
     "lint": "eslint --ext=jsx,ts,tsx src",
     "lint:fix": "eslint --ext=jsx,ts,tsx src --fix",
-    "server": "node-env-run server --exec nodemon | pino-colada",
+    "server": "node-env-run server --exec nodemon",
     "dev": "run-p server start"
   },
   "lint-staged": {
