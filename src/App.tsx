@@ -1,26 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ConfigProvider } from 'antd';
+import AppRouter from '../src/router/AppRouter';
+import { createBrowserHistory, History } from 'history';
+import plPL from 'antd/lib/locale/pl_PL';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const appHistory: History = createBrowserHistory();
+
+const App: React.FC = () => (
+  <ConfigProvider locale={plPL}>
+    <AppRouter history={appHistory} />
+  </ConfigProvider>
+);
 
 export default App;
