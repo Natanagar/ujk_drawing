@@ -19,6 +19,7 @@ const RegistrationPage: FC<RegistrationPageProps> = () => {
   return (
     <ContentWrapper>
       <StyledForm
+        style={{ padding: '20p' }}
         layout="vertical"
         form={form}
         onFinish={handleSubmit}
@@ -94,10 +95,6 @@ const RegistrationPage: FC<RegistrationPageProps> = () => {
         >
           <InputPassword />
         </FormItem>
-        <FormItem label="Реферальный код" name="promocode">
-          <Input />
-        </FormItem>
-
         <Form.Item
           name="pdAgree"
           valuePropName="checked"

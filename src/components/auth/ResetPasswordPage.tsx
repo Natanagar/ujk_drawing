@@ -18,7 +18,11 @@ const ResetPasswordPage: React.FC<ResetPasswordPageProps> = () => {
 
   return (
     <ContentWrapper>
-      <StyledForm onFinish={handleSubmit} form={form}>
+      <StyledForm
+        style={{ padding: '20px' }}
+        onFinish={handleSubmit}
+        form={form}
+      >
         {map(errors, error => (
           <Alert message={error.message} type="error" />
         ))}

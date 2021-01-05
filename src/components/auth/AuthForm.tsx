@@ -22,6 +22,7 @@ const AuthForm: React.FunctionComponent<AuthFormProps> = ({ location }) => {
   return (
     <ContentWrapper>
       <StyledForm
+        style={{ padding: '20px' }}
         layout="vertical"
         form={form}
         onFinish={handleSumbit}
