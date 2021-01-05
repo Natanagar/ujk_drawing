@@ -134,7 +134,6 @@ module.exports = {
     'react/static-property-placement': 0,
     'react/state-in-constructor': 0,
     'react/no-array-index-key': 0,
-
     '@typescript-eslint/indent': 0,
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/explicit-function-return-type': 0,

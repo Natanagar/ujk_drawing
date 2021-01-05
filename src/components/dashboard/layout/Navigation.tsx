@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as paths from '../../../router/paths';
 import logo from '../../../ui/logo.png';
-import { HighlightOutlined, UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Badge } from 'antd';
 
 interface NavigationProps {}
@@ -27,27 +27,17 @@ const Navigation: FC<NavigationProps> = () => (
 
     <div style={{ display: 'inline-flex', padding: 10, marginLeft: '10px' }}>
       <Link to={paths.MAIN}>
-        <div style={{ marginRight: '30px', marginTop: 'auto' }}>
-          {' '}
-          <Badge count={0}>
-            {' '}
-            <HighlightOutlined
-              style={{ fontSize: '24px', color: '#08c' }}
-            />{' '}
-          </Badge>
-        </div>
+        <Badge dot>
+          <Avatar
+            shape="circle"
+            icon={<UserOutlined />}
+            style={{
+              color: 'whitesmoke',
+              backgroundColor: '#87d068',
+            }}
+          />
+        </Badge>
       </Link>
-
-      <Badge dot>
-        <Avatar
-          shape="circle"
-          style={{
-            color: 'whitesmoke',
-            backgroundColor: '#87d068',
-          }}
-          icon={<UserOutlined />}
-        />
-      </Badge>
     </div>
   </StyledContainer>
 );
