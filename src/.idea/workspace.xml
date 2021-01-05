@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="36ba5331-7aec-4ed3-b1de-9cf8d000449a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/auth/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/AuthForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard/layout/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/layout/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/router/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/router/paths.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/ui/logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609794959279</updated>
-      <workItem from="1609794975641" duration="618000" />
+      <workItem from="1609794975641" duration="7567000" />
     </task>
     <servers />
   </component>

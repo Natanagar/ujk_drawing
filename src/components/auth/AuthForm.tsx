@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
+import { Link } from 'react-router-dom';
+import * as paths from '../../router/paths';
 import { Form, Input, Button, Alert } from 'antd';
 import map from 'lodash/map';
+import { ContentWrapper, StyledForm } from './authFormsContainers';
 const InputPassword = Input.Password;
 const FormItem = Form.Item;
 
@@ -17,8 +20,8 @@ const AuthForm: React.FunctionComponent<AuthFormProps> = ({ location }) => {
     console.log(values);
   };
   return (
-    <div>
-      <Form
+    <ContentWrapper>
+      <StyledForm
         layout="vertical"
         form={form}
         onFinish={handleSumbit}
@@ -27,12 +30,24 @@ const AuthForm: React.FunctionComponent<AuthFormProps> = ({ location }) => {
         }}
       >
         <FormItem
-          label="Пароль"
+          label="Email"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: 'Email is required',
+            },
+          ]}
+        >
+          <Input size="small" />
+        </FormItem>
+        <FormItem
+          label="Password"
           name="password"
           rules={[
             {
               required: true,
-              message: 'Пароль обязателен',
+              message: 'Password is required',
             },
           ]}
         >
@@ -45,11 +60,14 @@ const AuthForm: React.FunctionComponent<AuthFormProps> = ({ location }) => {
 
         <FormItem>
           <Button htmlType="submit" type="primary">
-            Войти
+            Sign in
           </Button>
         </FormItem>
-      </Form>
-    </div>
+        <Link to={paths.REGISTER}>Registration</Link>
+        <br />
+        <Link to={paths.RESET_PASSWORD}>Reset password</Link>
+      </StyledForm>
+    </ContentWrapper>
   );
 };
 

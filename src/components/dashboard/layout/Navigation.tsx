@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as paths from '../../../router/paths';
 import logo from '../../../ui/logo.png';
-import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import { HighlightOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Badge } from 'antd';
 
 interface NavigationProps {}
@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background: #9d9d9e;
+  background: lightblue;
   min-width: 100%;
   padding: 10px;
 `;
@@ -31,14 +31,22 @@ const Navigation: FC<NavigationProps> = () => (
           {' '}
           <Badge count={0}>
             {' '}
-            <ShoppingCartOutlined
-              style={{ fontSize: '36px', color: '#08c' }}
+            <HighlightOutlined
+              style={{ fontSize: '24px', color: '#08c' }}
             />{' '}
           </Badge>
         </div>
       </Link>
+
       <Badge dot>
-        <Avatar shape="square" icon={<UserOutlined />} />
+        <Avatar
+          shape="circle"
+          style={{
+            color: 'whitesmoke',
+            backgroundColor: '#87d068',
+          }}
+          icon={<UserOutlined />}
+        />
       </Badge>
     </div>
   </StyledContainer>
