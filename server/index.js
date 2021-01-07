@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const dotenv = require('dotenv');
 const users = require('./users.json');
+const cors = require('cors');
 dotenv.config();
 
 const UserModel = require('../model/model');
@@ -23,6 +24,7 @@ const routes = require('../routes/routes');
 const secureRoute = require('../routes/secure-routes');
 
 const app = express();
+app.use(cors({ credentials: true, origin: 'http://localhost:3006' }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', routes);
 app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);

@@ -1,7 +1,11 @@
 import React, { FC, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Form, Input, Button, Alert, Checkbox } from 'antd';
+import { useHistory } from 'react-router-dom';
+import { Alert, Button, Checkbox, Form, Input, notification } from 'antd';
+import * as paths from '../../router/paths';
 import { ContentWrapper, StyledForm } from './authFormsContainers';
+import postSignup from '../../model/common/auth/postSignup';
+// import postLogin from '../../model/common/auth/postLogin';
 
 const InputPassword = Input.Password;
 const FormItem = Form.Item;
@@ -10,22 +14,42 @@ interface RegistrationPageProps extends RouteComponentProps {}
 
 const RegistrationPage: FC<RegistrationPageProps> = () => {
   const [errors, setErrors] = useState<any[]>([]);
-
+  const [submitting, setSubmitting] = useState<boolean>(false);
   const [form] = Form.useForm();
+  const history = useHistory();
   const { validateFields, getFieldsValue } = form;
   const handleSubmit = (values: any) => {
     console.log(values);
+    const postData = { email: values.email, password: values.password };
+    console.log(postData);
+    setSubmitting(true);
+    postSignup(postData)
+      .then((res: any) => {
+        if (res.message === 'Signup successful') {
+          notification.success({
+            message: 'You can log in',
+            description: 'you will be directed to the login',
+          });
+          history.push(paths.AUTH);
+          setSubmitting(false);
+        }
+      })
+      .catch((err: any) => {
+        setSubmitting(false);
+        notification.error({
+          message: 'Server error',
+          description: `${err.message || err[0].message}`,
+        });
+      });
   };
+
   return (
     <ContentWrapper>
       <StyledForm
-        style={{ padding: '20p' }}
+        style={{ padding: '40px' }}
         layout="vertical"
         form={form}
         onFinish={handleSubmit}
-        initialValues={{
-          phone: '+7 ',
-        }}
       >
         <FormItem
           name="firstName"
@@ -119,7 +143,7 @@ const RegistrationPage: FC<RegistrationPageProps> = () => {
           : null}
 
         <FormItem>
-          <Button htmlType="submit" type="primary">
+          <Button loading={submitting} htmlType="submit" type="primary">
             Register
           </Button>
         </FormItem>

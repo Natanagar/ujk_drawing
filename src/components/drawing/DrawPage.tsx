@@ -1,7 +1,8 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import CanvasDraw from 'react-canvas-draw';
 import InputColor from 'react-input-color';
 import { Button, Typography } from 'antd';
+import { reactLocalStorage } from 'reactjs-localstorage';
 
 const { Title } = Typography;
 
@@ -12,16 +13,13 @@ const DrawPage: FC<DrawPageProps> = () => {
   const [context, setContext] = useState<any>(null);
 
   const changeColor = (value: any) => {
-    console.log(value);
     setColorBrush(value.hex);
   };
   const handleSave = (value: any) => {
-    console.log(value);
+    reactLocalStorage.set('myPaint', value);
   };
   const canvasRef = useRef<any>(null);
   const canvasDiv = canvasRef.current;
-
-  console.log(canvasRef, canvasDiv);
 
   const undoCanvas = () => {
     canvasRef.current.undo();
@@ -29,6 +27,8 @@ const DrawPage: FC<DrawPageProps> = () => {
   const clearCanvas = () => {
     canvasRef.current.clear();
   };
+
+  const loadedPaint = reactLocalStorage.get('myPaint');
 
   return (
     <div>

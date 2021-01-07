@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthForm from '../components/auth/AuthForm';
 import DrawPage from '../components/drawing/DrawPage';
 import RegistrationPage from '../components/auth/RegistrationPage';
-import ResetPasswordPage from '../components/auth/ResetPasswordPage';
 import DashboardLayout from '../components/dashboard/layout/DashboardLayout';
+import { getAuthToken } from '../model/authHelpers';
 
 interface AppRouterProps {
   history: History;
@@ -24,17 +24,13 @@ const routes: RouteType[] = [
   {
     path: paths.AUTH,
     name: 'Auth',
+    exact: true,
     Component: AuthForm,
   },
   {
     path: paths.REGISTER,
     name: 'Registration',
     Component: RegistrationPage,
-  },
-  {
-    path: paths.RESET_PASSWORD,
-    name: 'Reset Password Page',
-    Component: ResetPasswordPage,
   },
   {
     path: paths.MAIN,
