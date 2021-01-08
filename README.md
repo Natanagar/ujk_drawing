@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# UJK-Drawing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This educational project which was created for courses of programming languages in UJK
+the second year of Bachelor graduation
 
-## Available Scripts
+## Technologies
 
-In the project directory, you can run:
+Frontend-side: React-Typescript-Canvas
+CSS: styled-components
+UI-kit: AntD
 
-### `npm start`
+Backend-side: Express, Mongoose, Pino, Passport.js,
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Database : MongoDB;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `installation`
 
-### `npm test`
+MongoDb is needed to be pre-installed and running;
+Check information here [https://docs.mongodb.com/manual/installation/](check information about your OS)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Nodejs is needed to be pre-installed
+Check information here [https://nodejs.org/en/download/](please, check information about your OS)
 
-### `npm run build`
+Running the app in the development mode.\
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Use `git clone` this repo. Copy link from the front of the page.
+2. Go to the directory with the app (`cd my_directory` in the terminal(macOs)/bash(Win)).
+3. `npm i`
+4. `npm run dev`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `enviroment variables`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+in the root of the app you need to create via `touch .env` file with the next:
 
-### `npm run eject`
+1. PORT=8080 (default port for the server)
+2. REACT_APP_API=http://localhost:8080/ (default access to the api)
+3. REACT_APP_ACCESS_KEY="accessToken" - name of the access token
+4. REACT_APP_REFRESH_KEY="refreshToken" - name of the refresh token
+5. REACT_APP_COOKIE_DOMAIN=localhost - access to the cookie
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `Representation`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open [http://localhost:3006](http://localhost:3006) to view it in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The server will be started in [http://localhost:8080](http://localhost:8080)
+You don't need to open this page. The local server works as a proxy-server.
+In the terminal you'll see the message about running server.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## More
 
-## Learn More
+This educational project is created as mvc (model-view-controller) and mvp (minimal valuable product)
+Frontend-side: Creating pictures based on Canvas. Saving pictures to the LocalStorage.
+Custom and base validation of forms is based on AntD.
+Token to the authorization send via headers (Authorization without prefix Bearer)
+and in custom case via queries parameters.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Backend-size: JWT authorization is in the short version. There is only one token (no access and refresh token)
+but it can be replaced to the standard (jwt-authorization with custom algorithms).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The algorithm of checking token is represented in Passport.js strategy.
+
+Database: collection : jwt-users
+
+## More
+
+This is educational project and there is no pull-request to this repo.
