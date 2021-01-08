@@ -16,10 +16,10 @@ The Database : MongoDB;
 ### `installation`
 
 MongoDb is needed to be pre-installed and running;
-Check information here [https://docs.mongodb.com/manual/installation/](check information about your OS)
+Check information here [check information about your OS](https://docs.mongodb.com/manual/installation/)
 
 Nodejs is needed to be pre-installed
-Check information here [https://nodejs.org/en/download/](please, check information about your OS)
+Check information here [please, check information about your OS](https://nodejs.org/en/download/)
 
 Running the app in the development mode.\
 
@@ -33,7 +33,7 @@ Running the app in the development mode.\
 in the root of the app you need to create via `touch .env` file with the next:
 
 1. PORT=8080 (default port for the server)
-2. REACT_APP_API=http://localhost:8080/ (default access to the api)
+2. REACT_APP_API=`http://localhost:8080/` (default access to the api)
 3. REACT_APP_ACCESS_KEY="accessToken" - name of the access token
 4. REACT_APP_REFRESH_KEY="refreshToken" - name of the refresh token
 5. REACT_APP_COOKIE_DOMAIN=localhost - access to the cookie
@@ -46,7 +46,7 @@ The server will be started in [http://localhost:8080](http://localhost:8080)
 You don't need to open this page. The local server works as a proxy-server.
 In the terminal you'll see the message about running server.
 
-## More
+## More information about patterns and technologies
 
 This educational project is created as mvc (model-view-controller) and mvp (minimal valuable product)
 Frontend-side: Creating pictures based on Canvas. Saving pictures to the LocalStorage.
@@ -61,6 +61,6 @@ The algorithm of checking token is represented in Passport.js strategy.
 
 Database: collection : jwt-users
 
-## More
+## Pull-requests
 
 This is educational project and there is no pull-request to this repo.
