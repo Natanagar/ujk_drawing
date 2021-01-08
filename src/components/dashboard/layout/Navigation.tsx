@@ -44,7 +44,6 @@ const Navigation: FC<NavigationProps> = () => {
         }
       })
       .catch((err: any) => {
-        console.log(err);
         notification.error({
           message: 'Server error',
           description: `${err || err.message || err[0].message}`,

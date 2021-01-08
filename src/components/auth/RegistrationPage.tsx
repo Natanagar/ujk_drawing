@@ -5,7 +5,6 @@ import { Alert, Button, Checkbox, Form, Input, notification } from 'antd';
 import * as paths from '../../router/paths';
 import { ContentWrapper, StyledForm } from './authFormsContainers';
 import postSignup from '../../model/common/auth/postSignup';
-// import postLogin from '../../model/common/auth/postLogin';
 
 const InputPassword = Input.Password;
 const FormItem = Form.Item;

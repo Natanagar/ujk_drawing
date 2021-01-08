@@ -28,8 +28,6 @@ const DrawPage: FC<DrawPageProps> = () => {
     canvasRef.current.clear();
   };
 
-  const loadedPaint = reactLocalStorage.get('myPaint');
-
   return (
     <div>
       <Title level={3}>Enjoy your drawing</Title>
@@ -64,7 +62,7 @@ const DrawPage: FC<DrawPageProps> = () => {
           Undo
         </Button>
         <Button
-          onClick={() => console.log(canvasRef.current.getSaveData())}
+          onClick={() => handleSave(canvasRef.current.getSaveData())}
           type="primary"
         >
           Save

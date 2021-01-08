@@ -59,7 +59,7 @@ apiInstance.interceptors.request.use(
     const originalRequest = config;
     const token = getAuthToken();
     if (token && isTokenedRequest(config.url)) {
-      originalRequest.headers['x-access-token'] = token;
+      originalRequest.headers.Authorization = token.accessToken;
     }
 
     return Promise.resolve(originalRequest);
@@ -89,7 +89,6 @@ apiInstance.interceptors.response.use(
         if (getAuthToken()?.token) {
           return getrefreshTokenPromise(getAuthToken()?.token)
             .then((response: any) => {
-              console.log(response);
               const token = get(response, 'data.token', null);
               setAuthToken({ token });
 

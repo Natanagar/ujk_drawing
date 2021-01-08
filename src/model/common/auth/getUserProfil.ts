@@ -7,10 +7,10 @@ interface TokenParams {
 
 const getUserProfil = async () => {
   const { accessToken } = getAuthToken() as any;
-  const getUserProfilRequiest = await apiInstance.get(
-    `user/profile?secret_token=${accessToken}`
+  const getUserProfilRequiest = await apiInstance.get<TokenParams>(
+    'user/profile',
+    { params: { secret: accessToken } }
   );
-  console.log(getUserProfilRequiest.data);
   return getUserProfilRequiest.data;
 };
 export default getUserProfil;
