@@ -15,9 +15,7 @@ const DrawPage: FC<DrawPageProps> = () => {
   const changeColor = (value: any) => {
     setColorBrush(value.hex);
   };
-  const handleSave = (value: any) => {
-    reactLocalStorage.set('myPaint', value);
-  };
+
   const canvasRef = useRef<any>(null);
   const canvasDiv = canvasRef.current;
 
@@ -26,6 +24,20 @@ const DrawPage: FC<DrawPageProps> = () => {
   };
   const clearCanvas = () => {
     canvasRef.current.clear();
+  };
+
+  const canvasToImg = () => {
+    const tagA = document.createElement('a');
+    document.body.appendChild(tagA);
+    tagA.href = canvasRef.current.canvasContainer.children[1].toDataURL();
+    tagA.download = 'canvas-image.png';
+    tagA.click();
+    document.body.removeChild(tagA);
+  };
+
+  const handleSave = (value: any) => {
+    canvasToImg();
+    reactLocalStorage.set('myPaint', value);
   };
 
   return (
